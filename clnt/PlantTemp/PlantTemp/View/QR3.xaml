@@ -1,0 +1,168 @@
+﻿<Page x:Class="PlantTemp.View.QR3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:materialDesign="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PlantTemp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="950"
+      Title="QR3">
+
+    <Canvas Background="#FFF5EFE6">
+
+        <Image HorizontalAlignment="Center" Height="160" Width="950" Margin="0,0,0,560" Source="/Image/3344.jpg" Stretch="UniformToFill"/>
+        <Border BorderThickness="1" Height="94" Width="951" Background="Black" Opacity="0.404" HorizontalAlignment="Center"  VerticalAlignment="Top" Canvas.Top="-1"/>
+        <Border BorderBrush="#FF446A46" BorderThickness="3" HorizontalAlignment="Center" Height="549" VerticalAlignment="Top" Width="886" Canvas.Left="28" materialDesign:Canvas.Top="186">
+            <Border.Resources>
+                <Style TargetType = "{x:Type Border}">
+                    <Setter Property = "CornerRadius" Value="20"/>
+                </Style>
+            </Border.Resources>
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </Border.Background>
+        </Border>
+        <materialDesign:Image HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" 
+                              Width="421" Source="{Binding SelectUrl}" 
+                              materialDesign:Canvas.Left="468" materialDesign:Canvas.Top="289"/>
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectScientificName}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="290" Foreground="#FF3E4C3F" TextChanged="TextBox_TextChanged" />
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectFamilyName}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="340" Foreground="#FF3E4C3F" />
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectCommonName}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="390" Foreground="#FF3E4C3F" />
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectKoreanFamilyName}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="440" Foreground="#FF3E4C3F" />
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectFloweringPeriod}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="491" Foreground="#FF3E4C3F" />
+        <TextBox HorizontalAlignment="Center" Height="30"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Text="{Binding SelectFlowerColor}"
+                 IsReadOnly="true"
+                 Width="300" FontSize="15" Style="{x:Null}"
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="541" Foreground="#FF3E4C3F" />
+        <TextBox HorizontalAlignment="Left" Height="102"
+                 VerticalAlignment="Center"
+                 TextWrapping="Wrap"
+                 Text="{Binding SelectInfo}"
+                 IsReadOnly="true"
+                 Width="733" FontSize="15" Style="{x:Null}"
+                 SelectionOpacity="0" 
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                 materialDesign:Canvas.Left="157" materialDesign:Canvas.Top="590" Foreground="#FF3E4C3F" />
+        <Grid HorizontalAlignment="Center" Height="77" Canvas.Top="10" Width="930">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Logout_btn" Grid.Column="0" Content="로그아웃" HorizontalAlignment="Center" 
+                    Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}"
+                    FontSize="20" Foreground="White" Background="{x:Null}" Click="Logout_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Content="식물 정보" HorizontalAlignment="Center" Height="77"
+                    VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" 
+                    FontSize="20" Foreground="White" Background="{x:Null}" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Quiz1_btn" Grid.Column="2" Content="문제 풀이"
+                    HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" 
+                    Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Quiz1_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Qna1_btn" Grid.Column="3" Content="Q&amp;A" 
+                    HorizontalAlignment="Center" Height="77" 
+                    VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}"
+                    FontSize="20" Foreground="White" Background="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Chat_btn" Grid.Column="4" Content="상담" 
+                    HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" 
+                    Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Button x:Name="Search_btn" Content="다음" HorizontalAlignment="Left" 
+            Height="44" VerticalAlignment="Center" Width="96" Background="#FFCBA7B6" BorderBrush="{x:Null}"
+            Foreground="White" FontSize="20" FontWeight="Bold"
+            Style="{materialDesign:StaticResource MaterialDesignFlatDarkBgButton}"
+            materialDesign:Canvas.Left="794" materialDesign:Canvas.Top="212" Cursor="Hand" Click="Search_btn_Click">
+        </Button>
+        <Label Content="Quiz" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="340" FontSize="35" FontWeight="Bold" Foreground="#FF446A46" RenderTransformOrigin="0.028,0.885" materialDesign:Canvas.Left="65" materialDesign:Canvas.Top="205"/>
+        <Line X1="0" X2="830" Stroke="#FF82A284" Canvas.Top="265" Canvas.Left="58" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Label Content="학명" HorizontalAlignment="Left" Height="64" VerticalAlignment="Center" Width="66" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="90" materialDesign:Canvas.Top="271"/>
+
+        <Label Content="국명" HorizontalAlignment="Left" Height="64" VerticalAlignment="Center" Width="68" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="89" materialDesign:Canvas.Top="371"/>
+        <Label Content="한글과명" HorizontalAlignment="Left" Height="64" VerticalAlignment="Center" Width="108" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="48" materialDesign:Canvas.Top="423"/>
+        <Label Content="과명" Height="64" Width="66" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="90" materialDesign:Canvas.Top="322" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="292" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="343" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="392" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="444" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Line X1="0" X2="97" Stroke="#FF82A284" materialDesign:Canvas.Top="69" materialDesign:Canvas.Left="232" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <materialDesign:Label Content="꽃 색상" Height="64" Width="108" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="55" materialDesign:Canvas.Top="523" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <materialDesign:Label Content="개화시기" Height="64" Width="108" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="49" materialDesign:Canvas.Top="472" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <materialDesign:Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="493" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <materialDesign:Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="543" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <materialDesign:Label Content="상세정보" Height="64" Width="108" FontSize="21" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF3E4C3F" FontWeight="Bold" materialDesign:Canvas.Left="47" materialDesign:Canvas.Top="572" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <materialDesign:Line X1="0" Y1="0" Y2="25" materialDesign:Canvas.Top="592" materialDesign:Canvas.Left="150" Stroke="#FF3E4C3F" HorizontalAlignment="Left" VerticalAlignment="Center" />
+    </Canvas>
+
+
+</Page>

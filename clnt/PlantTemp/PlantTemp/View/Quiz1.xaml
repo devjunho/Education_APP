@@ -1,0 +1,168 @@
+﻿<Page x:Class="PlantTemp.View.Quiz1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:PlantTemp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="950"
+      Title="Quiz1">
+
+    <Canvas Background="#FFF5EFE6">
+
+        <Image HorizontalAlignment="Center" Height="160" Width="950" Margin="0,0,0,560" Source="/Image/3344.jpg" Stretch="UniformToFill"/>
+        <Border BorderThickness="1" Height="94" Width="951" Background="Black" Opacity="0.404" HorizontalAlignment="Center"  VerticalAlignment="Top" Canvas.Top="-1"/>
+        <Border BorderBrush="#FF446A46" BorderThickness="3" HorizontalAlignment="Center" Height="549" VerticalAlignment="Top" Width="886" Canvas.Left="28" Canvas.Top="186">
+            <Border.Resources>
+                <Style TargetType = "{x:Type Border}">
+                    <Setter Property = "CornerRadius" Value="20"/>
+                </Style>
+            </Border.Resources>
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </Border.Background>
+        </Border>
+        <Grid HorizontalAlignment="Center" Height="77" Canvas.Top="10" Width="930">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Logout_btn" Grid.Column="0" Content="로그아웃" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Logout_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Content="식물 정보" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Quiz1_btn" Grid.Column="2" Content="문제 풀이" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Quiz1_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Qna1_btn" Grid.Column="3" Content="Q&amp;A" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Chat_btn" Grid.Column="4" Content="상담" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Label Content="Quiz" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="340" FontSize="35" FontWeight="Bold" Foreground="#FF446A46" RenderTransformOrigin="0.028,0.885" Canvas.Left="65" Canvas.Top="205"/>
+        <Line X1="0" X2="830" Stroke="#FF82A284" Canvas.Top="265" Canvas.Left="58" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Line X1="0" X2="97" Stroke="#FF82A284" Canvas.Top="69" Canvas.Left="417" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <materialDesign:Card Width="250" Height="410" 
+                             Canvas.Left="58" Canvas.Top="288"
+                             HorizontalAlignment="Left" VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignOutlinedCard}" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Height="150" Source="/Image/11113.jpg" />
+                <Button
+                    Grid.Row="1"
+                    Margin="0,0,20,20"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" Background="#FF446A46" BorderBrush="#FF446A46" Height="45" Width="100" Click="Button_Click_1">
+                    <materialDesign:PackIcon Kind="CheckBold" Foreground="#FFFBFBFB" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Margin="8,9,8,15" FontWeight="Bold" Text="이미지 퀴즈" FontSize="30" Foreground="#FF3E4C3F" >
+                    </TextBlock>
+                    <TextBlock Margin="8,0,8,15" Foreground="#FF3E4C3F" FontSize="18"
+                               Text="식물의 이미지를 보고
+                               해당하는 식물의 이름을
+                               맞춰보세요"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card Width="250" Height="410" 
+            Canvas.Left="348" Canvas.Top="288"
+                             HorizontalAlignment="Left" VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignOutlinedCard}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Height="150" Source="/Image/11114.jpg" />
+                <Button
+                        Grid.Row="1"
+                        Margin="0,0,20,20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}"
+                    Background="#FF446A46" BorderBrush="#FF446A46" Height="45" Width="100">
+                    <materialDesign:PackIcon Kind="CheckBold" Foreground="#FFFBFBFB"
+                                             Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Margin="8,9,8,15" FontWeight="Bold" Text="학명 퀴즈" FontSize="30" Foreground="#FF3E4C3F" >
+                    </TextBlock>
+                    <TextBlock Margin="8,0,8,15" Foreground="#FF3E4C3F" FontSize="18"
+               Text="식물의 학명을 보고
+                              해당하는 식물의 이름을
+                               맞춰보세요"
+               TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card Width="250" Height="410" 
+            Canvas.Left="638" Canvas.Top="288"
+                             HorizontalAlignment="Left" VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignOutlinedCard}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Height="150" Source="/Image/11115.jpg" Margin="1,0,-1,0" />
+                <Button
+         Grid.Row="1"
+         Margin="0,0,20,20"
+         HorizontalAlignment="Right"
+         VerticalAlignment="Bottom"
+         Style="{StaticResource MaterialDesignRaisedSecondaryDarkButton}"
+     Background="#FF446A46" BorderBrush="#FF446A46" Height="45" Width="100">
+                    <materialDesign:PackIcon Kind="CheckBold" Foreground="#FFFBFBFB"
+                              Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Button>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Margin="8,9,8,15" FontWeight="Bold" Text="꽃색상 퀴즈" FontSize="30" Foreground="#FF3E4C3F" >
+                    </TextBlock>
+                    <TextBlock Margin="8,0,8,15" Foreground="#FF3E4C3F" FontSize="18"
+                                Text="식물들의 국명을 보고
+                                               꽃색상이 다른 식물을
+                               맞춰보세요"
+                                TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Canvas>
+</Page>

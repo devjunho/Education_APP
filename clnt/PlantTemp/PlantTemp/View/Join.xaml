@@ -1,0 +1,134 @@
+﻿<Page x:Class="PlnatTemp.Join"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PlnatTemp"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="950"
+      Title="Join">
+
+    <Grid Background="#FF82A284">
+        <Border BorderBrush="#FFCBA7B6" BorderThickness="3" HorizontalAlignment="Center" Height="443" VerticalAlignment="Top" Width="778" Margin="0,188,0,0">
+            <Border.Resources>
+                <Style TargetType = "{x:Type Border}">
+                    <Setter Property = "CornerRadius" Value="20"/>
+                </Style>
+            </Border.Resources>
+        </Border>
+        <Label Content="JOIN" HorizontalAlignment="Left" Height="93" Margin="727,95,0,0" VerticalAlignment="Top" Width="137" FontSize="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontFamily="Palatino Linotype" FontStyle="Italic" FontWeight="Bold"/>
+        <TextBox x:Name="ID_box" Style="{x:Null}"
+                 HorizontalAlignment="Left" Height="64" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="322" Margin="334,205,0,0" FontSize="20" VerticalContentAlignment="Center" SelectionOpacity="0" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Padding="30,0,0,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <PasswordBox x:Name="PW_box" HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="464" Password="pw" FontSize="20" VerticalContentAlignment="Center" BorderBrush="White" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Padding="30,0,0,0" Margin="334,290,0,0">
+            <PasswordBox.Resources>
+                <Style x:Key="{x:Type PasswordBox}"
+                    TargetType="{x:Type PasswordBox}">
+                    <Setter Property="FocusVisualStyle"
+                        Value="{x:Null}" />
+                    <Setter Property="PasswordChar"
+                        Value="*" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                <Border x:Name="Border"
+                                    CornerRadius="10"
+                                    Padding="2"
+                                    BorderThickness="1" Background="White">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="Disabled" />
+                                            <VisualState x:Name="MouseOver" />
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </PasswordBox.Resources>
+        </PasswordBox>
+        <PasswordBox x:Name="PW_check_box" HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="464" Password="pw" FontSize="20" VerticalContentAlignment="Center" BorderBrush="White" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Margin="334,377,0,0" Padding="30,0,0,0">
+            <PasswordBox.Resources>
+                <Style x:Key="{x:Type PasswordBox}"
+                    TargetType="{x:Type PasswordBox}">
+                    <Setter Property="FocusVisualStyle"
+                        Value="{x:Null}" />
+                    <Setter Property="PasswordChar"
+                        Value="*" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type PasswordBox}">
+                                <Border x:Name="Border"
+                                    CornerRadius="10"
+                                    Padding="2"
+                                    BorderThickness="1" Background="White">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="Disabled" />
+                                            <VisualState x:Name="MouseOver" />
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <ScrollViewer x:Name="PART_ContentHost" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </PasswordBox.Resources>
+        </PasswordBox>
+        <Button x:Name="Id_check_btn" Content="중복 확인" HorizontalAlignment="Left" Height="64" Margin="670,205,0,0" VerticalAlignment="Top" Width="128" Background="#FF446A46" BorderBrush="{x:Null}" Foreground="White" FontSize="20" FontWeight="Bold" Click="Id_check_btn_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox x:Name="Name_box" Style="{x:Null}"
+                 HorizontalAlignment="Left" Height="64" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="464" Margin="334,462,0,0" FontSize="20" VerticalContentAlignment="Center" SelectionOpacity="0" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Padding="30,0,0,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="Email1_box" Style="{x:Null}"
+                 HorizontalAlignment="Left" Height="64" TextWrapping="Wrap" Text="EMAIL 1" VerticalAlignment="Top" Width="201" Margin="334,548,0,0" FontSize="18" VerticalContentAlignment="Center" SelectionOpacity="0" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Padding="30,0,0,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="Email2_box" Style="{x:Null}"
+                 HorizontalAlignment="Left" Height="64" TextWrapping="Wrap" Text="EMAIL 2" VerticalAlignment="Top" Width="211" Margin="585,548,0,0" FontSize="18" VerticalContentAlignment="Center" SelectionOpacity="0" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Padding="30,0,0,0">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Height="64" Margin="540,550,0,0" TextWrapping="Wrap" Text="@" VerticalAlignment="Top" Width="40" FontSize="28" Padding="7,15,0,0" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="Join_btn" Content="회원가입" HorizontalAlignment="Center" Height="64" Margin="0,638,0,0" VerticalAlignment="Top" Width="232" Background="#FFCBA7B6" BorderBrush="{x:Null}" Foreground="White" FontSize="20" FontWeight="Bold" Click="Join_btn_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content="ID" HorizontalAlignment="Left" Height="64" Margin="265,205,0,0" VerticalAlignment="Top" Width="55" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
+        <Label Content="PASSWORD" HorizontalAlignment="Left" Height="64" Margin="140,290,0,0" VerticalAlignment="Top" Width="180" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
+        <Label Content="CHECK" HorizontalAlignment="Left" Height="64" Margin="205,377,0,0" VerticalAlignment="Top" Width="115" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
+        <Label Content="NAME" HorizontalAlignment="Left" Height="64" Margin="210,462,0,0" VerticalAlignment="Top" Width="110" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
+        <Label Content="E-MAIL" HorizontalAlignment="Left" Height="64" Margin="205,548,0,0" VerticalAlignment="Top" Width="115" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontWeight="Bold"/>
+
+    </Grid>
+</Page>

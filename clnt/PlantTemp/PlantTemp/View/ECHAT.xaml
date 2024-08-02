@@ -1,0 +1,203 @@
+﻿<Page x:Class="PlantTemp.View.ECHAT"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:PlantTemp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="950"
+      Title="CCHAT">
+
+    <!--<Page.Resources>
+        --><!--데이터템플릿--><!--
+        <DataTemplate x:Key="BaseDataTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="{Binding Message}" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CreateAt, StringFormat={}{0:t}}" />
+            </Grid>
+        </DataTemplate>
+        --><!--데이터템플릿셀렉터--><!--
+        <local:DataTemplateSelector x:Key="DataTemplateSelector" BaseDataTemplate="{StaticResource BaseDataTemplate}">
+            <local:DataTemplateSelector.UserDataTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" MaxWidth="500">
+                        <Border Background="LightGreen"
+    BorderThickness="1" CornerRadius="10">
+                            <TextBlock Margin="8" Text="{Binding Message}" TextWrapping="Wrap"/>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Right"
+       Text="{Binding CreateAt, StringFormat={}{0:t}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </local:DataTemplateSelector.UserDataTemplate>
+            <local:DataTemplateSelector.BotDataTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" MaxWidth="500">
+                        <Border Background="LightBlue" Margin="5,0,0,0" 
+    BorderThickness="1" CornerRadius="10">
+                            <TextBlock Margin="8" Text="{Binding Message}" TextWrapping="Wrap"/>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Left" Margin="5,0,0,0" 
+       Text="{Binding CreateAt, StringFormat={}{0:t}}"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </local:DataTemplateSelector.BotDataTemplate>
+            <local:DataTemplateSelector.ImageDataTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <Image Source="{Binding Message}" Width="{Binding Width}" Height="{Binding Height}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </local:DataTemplateSelector.ImageDataTemplate>
+            <local:DataTemplateSelector.ChatDataTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" MaxWidth="500">
+                        <Border Background="LightGreen"
+                        BorderThickness="1" CornerRadius="10">
+                            <TextBlock Margin="8" Text="{Binding Message}" TextWrapping="Wrap"/>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Right"
+                           Text="{Binding CreateAt, StringFormat={}{0:t}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </local:DataTemplateSelector.ChatDataTemplate>
+            <local:DataTemplateSelector.ServiceDataTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" MaxWidth="500">
+                        <Border Background="LightBlue" Margin="5,0,0,0" 
+                        BorderThickness="1" CornerRadius="10">
+                            <TextBlock Margin="8" Text="{Binding Message}" TextWrapping="Wrap"/>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Left" Margin="5,0,0,0" 
+                           Text="{Binding CreateAt, StringFormat={}{0:t}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </local:DataTemplateSelector.ServiceDataTemplate>
+        </local:DataTemplateSelector>
+    </Page.Resources>-->
+
+    <Canvas Background="#FFF5EFE6">
+
+        <Image HorizontalAlignment="Center" Height="160" Width="950" Margin="0,0,0,560" Source="/Image/3344.jpg" Stretch="UniformToFill"/>
+        <Border BorderThickness="1" Height="94" Width="951" Background="Black" Opacity="0.404" HorizontalAlignment="Center"  VerticalAlignment="Top" Canvas.Top="-1"/>
+        <Border BorderBrush="#FF446A46" BorderThickness="3" HorizontalAlignment="Center" Height="549" VerticalAlignment="Top" Width="886" Canvas.Left="28" Canvas.Top="186">
+            <Border.Resources>
+                <Style TargetType = "{x:Type Border}">
+                    <Setter Property = "CornerRadius" Value="20"/>
+                </Style>
+            </Border.Resources>
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </Border.Background>
+        </Border>
+        <ListView 
+                      Height="360" Canvas.Top="280"
+                      BorderThickness="0,2,0,2"
+                      VerticalAlignment="Top" Width="834" 
+                        Style="{x:Null}"
+                      BorderBrush="#FF82A284" 
+                      Foreground="#FF3E4C3F" Canvas.Left="55">
+        </ListView>
+
+        <ListBox x:Name="ChatListBox" Width="834" Height="350"
+                 BorderThickness="1" Canvas.Left="55" Canvas.Top="290"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 ItemTemplateSelector="{StaticResource DataTemplateSelector}"
+                 ItemsSource="{Binding Messages}"
+                 Loaded="ChatListBox_Loaded" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <Button x:Name="Search_btn" Content="고객 연결" HorizontalAlignment="Left" 
+                Height="44" VerticalAlignment="Center" Width="148" Background="#FFCBA7B6" BorderBrush="{x:Null}"
+                Foreground="White" FontSize="20" FontWeight="Bold" 
+                Command="{Binding WantChat}"
+                Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                Canvas.Left="742" Canvas.Top="212" Cursor="Hand">
+        </Button>
+
+        <StackPanel Orientation="Horizontal" Canvas.Top="670" Canvas.Left="55">
+            <TextBox x:Name="InputTextBox" Width="834" Height="30" Style="{x:Null}"
+                     HorizontalAlignment="Center" 
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 FontSize="15" 
+                 VerticalContentAlignment="Center" SelectionOpacity="0"
+                 SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"
+                  Foreground="#FF3E4C3F"
+             Text="{Binding NewMessage, UpdateSourceTrigger=PropertyChanged}" >
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding SendMessage}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+        </StackPanel>
+
+
+        <Grid HorizontalAlignment="Center" Height="77" Canvas.Top="10" Width="930">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Logout_btn" Grid.Column="0" Content="로그아웃" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Logout_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Content="식물 정보" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Quiz1_btn" Grid.Column="2" Content="문제 풀이" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Quiz1_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Qna1_btn" Grid.Column="3" Content="Q&amp;A" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}" Click="Qna1_btn_Click">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="Chat_btn" Grid.Column="4" Content="상담" HorizontalAlignment="Center" Height="77" VerticalAlignment="Center" Width="180" BorderBrush="{x:Null}" FontSize="20" Foreground="White" Background="{x:Null}">
+                <Button.Resources>
+                    <Style TargetType = "{x:Type Border}">
+                        <Setter Property = "CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Label Content="고객 상담" HorizontalAlignment="Left" Height="60" 
+               VerticalAlignment="Center" Width="340" FontSize="35"
+               FontWeight="Bold" Foreground="#FF446A46" RenderTransformOrigin="0.028,0.885"
+               Canvas.Left="65" Canvas.Top="205"/>
+        <Line X1="0" X2="830" Stroke="#FF82A284" Canvas.Top="265" Canvas.Left="58" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Line X1="0" X2="97" Stroke="#FF82A284" Canvas.Top="69" Canvas.Left="789" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+
+    </Canvas>
+</Page>
+

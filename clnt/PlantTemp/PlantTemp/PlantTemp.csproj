@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\1111.jpg" />
+    <None Remove="Image\11113.jpg" />
+    <None Remove="Image\11114.jpg" />
+    <None Remove="Image\11115.jpg" />
+    <None Remove="Image\1112.jpg" />
+    <None Remove="Image\1122.jpg" />
+    <None Remove="Image\2.jpg" />
+    <None Remove="Image\3344.jpg" />
+    <None Remove="Image\5566.jpg" />
+    <None Remove="Image\7788.jpg" />
+    <None Remove="Image\BannerImage.jpg" />
+    <None Remove="Image\flower-7495870_1920.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\11115.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\1111.jpg" />
+    <Resource Include="Image\11113.jpg" />
+    <Resource Include="Image\11114.jpg" />
+    <Resource Include="Image\1112.jpg" />
+    <Resource Include="Image\2.jpg" />
+    <Resource Include="Image\3344.jpg" />
+  </ItemGroup>
+
+</Project>
